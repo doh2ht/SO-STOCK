@@ -1,0 +1,159 @@
+/* General styles */
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+
+	font-size: 14px;
+	padding: 40px 3px;
+    
+}
+/* Grid */
+.pictures-grid {
+    margin: 100px 150px 100px 150px;
+	display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개의 열을 동등한 너비로 설정 */
+    gap: 10px; /* 그리드 아이템 사이의 간격 */
+    max-width: 100%;
+    justify-items: center; /* 가로축에서 중앙 정렬 */
+    align-items: center; /* 세로축에서 중앙 정렬 */
+}
+.pictures-grid img {
+	width: 100%; /* 컨테이너 너비에 맞춰지도록 */
+    height: auto; /* 이미지의 원래 비율 유지 */
+    animation: 0.55s ease-in-out fadeIn forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Menu */
+.categories {
+	list-style: none;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    position: fixed;
+padding-top:2%;
+    z-index: 27; width:100vw;
+font-family: arial, bold;
+font-size: 16px;
+background-color: rgb(255, 255, 255);
+    top:0;
+    left:0;
+
+
+}
+
+
+
+.categories .selected {
+    background-color: #447faa; 
+padding:0.2%;
+	color: rgb(0, 0, 0); 
+    
+}
+.categories li:not(:last-child) {
+	margin-right: 30px;
+}
+.categories li {
+	font-size: 1.2em;
+	cursor: pointer;
+    
+    
+}
+
+
+.img-container {
+      transition: transform 0.3s ease;
+         cursor: pointer;
+         position: relative;
+     }
+ .img-container.enlarged img {
+         transform: scale(2); 
+        z-index: 9; 
+        position: relative; 
+ }
+
+ .logo-container {
+    text-align: left; /* Centers the logo image */
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    position: fixed;
+    top: 3%;
+    left:2%;
+    z-index: 40; /* Ensures the logo stays on top of other elements */
+}
+.about{
+    position:fixed;
+   bottom: 3%;
+    right:2%;
+    left:2%;
+ font-family: arial;
+    width:38%;
+    z-index: 29;
+    background-color:    #7f7e2d;
+    font-size: 18px;
+    line-height: 22px;
+    color:#000000;
+ 
+    padding:0.3%;
+
+
+    
+}
+
+.logo {
+    max-width: 160px; /* Adjust to the width of your logo */
+    height: auto; /* Maintains the aspect ratio of the logo */
+}
+
+.enlarged {
+    /* Styles to enlarge the image */
+    z-index: 10;
+    position: relative; 
+    /* Other styles for positioning, size, etc. */
+}
+
+.logo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('image/miniwater.png') center center no-repeat;
+    background-size:  contain; 
+    display: none;
+    z-index: 20;
+}
+
+.img-container.enlarged .logo-overlay {
+    display: block; 
+}
+
+
+.text-overlay {
+
+    position: absolute;
+    color: rgb(0, 0, 0);
+    background:  #ff7d93;
+    padding: 0.3%;
+
+    font-size: 16px;
+    line-height: 20px;
+    font-family: arial, bold;
+
+
+    width: 280px; /* Fixed width */
+    height: auto;
+    z-index: 50; 
+    display: none;
+}
